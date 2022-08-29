@@ -23,20 +23,22 @@ export default {
     }
   },
   watch:{
-    search(val){
-      if(val){
-        this.$router.push({
-          query:{
-            q:this.search
-          }
-        })
-        localStorage.setItem('q',val)
-      }else{
-        this.$router.push({
-          query:{}
-        })
-        localStorage.removeItem('q')
-      }
+    search:{
+      handler(val){
+        if(val){
+          this.$router.push({
+            query:{
+              q:this.search
+            }
+          })
+          localStorage.setItem('q',val)
+        }else{
+          this.$router.push({
+            query:{}
+          })
+          localStorage.removeItem('q')
+        }
+      },
     },
   },
   created(){
@@ -48,6 +50,7 @@ export default {
           q:this.search
         }
       })
+      this.searchHandler()
     }
   }
 }
