@@ -4,15 +4,22 @@ export const state = () => ({
 
 export const mutations = {
   setBooks(state, booksList) {
-    state.books.push(booksList)
+    state.books = booksList
   },
 }
 export const actions = {
-  async getBooks(ctx,searchStr){
-    await this.$axios.get('volumes',{
+  async fetchBooks(ctx,searchStr){
+    const { data : {items} } = await this.$axios.get('volumes',{
       params:{
         q:searchStr
       }
     })
+    ctx.commit('setBooks',items)
+  }
+}
+
+export const getters = {
+  getFilteredBooksList(state){
+    return state.books.map(b=>b.volumeInfo)
   }
 }
