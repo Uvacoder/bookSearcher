@@ -17,9 +17,6 @@ module.exports = {
       gold_gradient:'background: linear-gradient(67.87deg, #F4D974 3.68%, #B88114 49.93%, #EFD26C 82.76%, rgba(255, 153, 42, 0) 118.99%),linear-gradient(0deg, #FFFFFF, #FFFFFF);'
     }
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
   content: [
     `components/**/*.{vue,js}`,
     `layouts/**/*.vue`,
