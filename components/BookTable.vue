@@ -17,7 +17,7 @@
     <tr
       v-for="(bodyItem, indx) in $props.tableBody"
       :key="bodyItem.id"
-      class="text-gray-800 odd:bg-white even:bg-text_secondary !hover:bg-gray-200"
+      class="text-gray-800 odd:bg-gray-100 even:bg-text_secondary !hover:bg-gray-200"
     >
       <td class="rowText">
         {{ bodyItem.title }}
@@ -48,7 +48,7 @@ export default {
   },
   methods:{
     sliceDescription(text){
-      return text ? text.slice(0,100) + '...' : '-'
+      return text ? text.slice(0,100) + '...' : ''
     }
   }
 }
@@ -58,6 +58,6 @@ export default {
 
 <style scoped>
 .rowText{
-  @apply py-4 text-center font-montserrat;
+  @apply py-4 px-[8px] text-center font-montserrat;
 }
 </style>
