@@ -1,19 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .section_wrapper{
-    @apply max-w-[1280px] mx-auto
+  @apply max-w-[1280px] mx-auto px-[8px] 2xl:px-0
 }
 .form_wrapper{
-    @apply flex flex-col gap-[8px] font-inter
+    @apply flex flex-col gap-[8px] font-inter;
 }
 .form_label{
-    @apply text-[1.12em] text-white font-inter h-[30px]
+  @apply text-[1.12em] text-white font-inter h-[30px];
 }
 
 .base_input{
-    @apply bg-secondary placeholder:text-[1.12em] text-[1.12em] py-[13px] px-[12px] text-white border border-border_primary placeholder:text-text_secondary focus:ring-offset-1 focus:ring-2 focus:ring-primary
+    @apply bg-gray-50 placeholder:text-[1.12em] text-[1.12em] py-[13px] px-[12px] text-white border border-border_primary placeholder:text-text_secondary focus:ring-offset-1 focus:ring-2 focus:ring-primary
 }
 .error_message{
     @apply text-[#FF734A] h-[30px]
