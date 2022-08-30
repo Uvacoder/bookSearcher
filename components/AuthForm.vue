@@ -4,7 +4,7 @@
       <label class="text-[2em]" for="username">Username</label>
       <input maxlength="16" class="bg-gray-50 shadow focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-[1.12em] text-[1.12em] text-primary py-[12px] px-[20px]" id="username" v-model="username" type="text">
       <div class="error_message">{{error}}</div>
-      <button :disabled="error" @click.prevent="submitHandler" class="font-montserrat bg-primary block text-white hover:opacity-50 h-full px-[20px] py-[10px]" :class="{'opacity-40 cursor-not-allowed':error}">
+      <button  @click.prevent="submitHandler" class="font-montserrat bg-primary block text-white hover:opacity-50 h-full px-[20px] py-[10px]" :class="{'opacity-40 cursor-not-allowed':error}">
         {{ loading ? "Loading" : "GO"  }}
       </button>
     </form>
@@ -49,7 +49,10 @@ export default {
       }
     },
     submitHandler () {
-      this.$emit('submit',this.username)
+      if(!this.error){
+        this.$emit('submit',this.username)
+      }
+
     },
     validateToken(token) {
       return new Promise((res,rej)=>{
