@@ -1,25 +1,22 @@
 export const state = () => ({
-  books: []
+  isAuth: false
 })
 
 export const mutations = {
-  setBooks(state, booksList) {
-    state.books = booksList
+  setAuth(state, payload) {
+    state.isAuth = payload
   },
 }
+
 export const actions = {
-  async fetchBooks(ctx,searchStr){
-    const { data : {items} } = await this.$axios.get('volumes',{
-      params:{
-        q:searchStr
-      }
-    })
-    ctx.commit('setBooks',items)
+  login({commit},payload){
+    commit('setAuth',payload === "asdfghjklasdfghj")
+    return payload === "asdfghjklasdfghj"
   }
 }
 
 export const getters = {
-  getFilteredBooksList(state){
-    return state.books.map(b=>b.volumeInfo)
+  getUserAuth(state){
+    return state.isAuth
   }
 }
