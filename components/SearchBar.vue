@@ -32,7 +32,8 @@ export default {
             }
           })
           localStorage.setItem('q',val)
-        }else{
+        }
+        else{
           this.$router.push({
             query:{}
           })
