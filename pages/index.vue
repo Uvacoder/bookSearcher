@@ -12,6 +12,7 @@ import SearchBar from '~/components/SearchBar'
 
 
 export default {
+  middleware: 'auth',
   name: 'IndexPage',
   components: { SearchBar },
   data () {
